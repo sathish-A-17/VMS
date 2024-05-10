@@ -1,0 +1,19 @@
+{% block content %}
+<div class="container">
+    <h2>Vendors</h2>
+    <ul class="list-group">
+        {% for vendor in vendors %}
+        <li class="list-group-item">
+            <strong>{{ vendor.name }}</strong><br>
+            Contact: {{ vendor.contact_details }}<br>
+            Address: {{ vendor.address }}<br>
+            Vendor Code: {{ vendor.vendor_code }}<br>
+            On-Time Delivery Rate: {{ vendor.on_time_delivery_rate }}%<br>
+            Quality Rating Avg: {{ vendor.quality_rating_avg }}<br>
+            Average Response Time: {{ vendor.average_response_time }} seconds<br>
+            Fulfillment Rate: {{ vendor.fulfillment_rate }}%<br>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

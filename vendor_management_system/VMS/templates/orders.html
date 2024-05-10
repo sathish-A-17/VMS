@@ -1,0 +1,26 @@
+{% block content %}
+<div class="container">
+    <h2>Purchase Orders</h2>
+
+    <ul class="list-group">
+        {% for po in orders %}
+        <li class="list-group-item">
+            <strong>PO Number:</strong> {{ po.po_number }}<br>
+            <strong>Vendor:</strong> {{ po.vendor.name }}<br>
+            <strong>Order Date:</strong> {{ po.order_date }}<br>
+            <strong>Delivery Date:</strong> {{ po.delivery_date }}<br>
+            <strong>Items:</strong> {{ po.items }}<br>
+            <strong>Quantity:</strong> {{ po.quantity }}<br>
+            <strong>Status:</strong> {{ po.get_status_display }}<br>
+            {% if po.quality_rating is not None %}
+            <strong>Quality Rating:</strong> {{ po.quality_rating }}<br>
+            {% endif %}
+            <strong>Issue Date:</strong> {{ po.issue_date }}<br>
+            {% if po.acknowledgment_date %}
+            <strong>Acknowledgment Date:</strong> {{ po.acknowledgment_date }}<br>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

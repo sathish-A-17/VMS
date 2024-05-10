@@ -1,0 +1,17 @@
+{% block content %}
+<div class="container">
+    <h2>Historical Performance</h2>
+    <ul class="list-group">
+        {% for record in historical_performance %}
+        <li class="list-group-item">
+            <strong>Vendor:</strong> {{ record.vendor.name }}<br>
+            <strong>Date:</strong> {{ record.date }}<br>
+            <strong>On-Time Delivery Rate:</strong> {{ record.on_time_delivery_rate }}%<br>
+            <strong>Quality Rating Avg:</strong> {{ record.quality_rating_avg }}<br>
+            <strong>Average Response Time:</strong> {{ record.average_response_time }} seconds<br>
+            <strong>Fulfillment Rate:</strong> {{ record.fulfillment_rate }}%<br>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
